@@ -1,5 +1,9 @@
 <template>
-  <div>ghhjbh</div>
+  <div>
+    <span class="toutiao toutiao-gengduo"></span>
+    <van-button type="primary">主要按钮</van-button>
+    <div class="box"></div>
+  </div>
 </template>
 
 <script>
@@ -14,4 +18,10 @@
 export default {}
 </script>
 
-<style></style>
+<style scoped>
+.box{
+  width: 3rem;
+  height: 3rem;
+  background-color: #999;
+}
+</style>
