@@ -1,8 +1,6 @@
 <template>
   <div>
-    <span class="toutiao toutiao-gengduo"></span>
-    <van-button type="primary">主要按钮</van-button>
-    <div class="box"></div>
+   <router-view></router-view>
   </div>
 </template>
 
