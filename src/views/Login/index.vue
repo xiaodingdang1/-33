@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['SET_COUNT']),
+    ...mapMutations(['SET_TOKEN']),
     async onSubmit() {
       // submit事件只有表单校验通过以后会被触发
       this.$toast.loading({
@@ -78,7 +78,7 @@ export default {
       })
       try {
         const { data } = await login(this.mobile, this.code)
-        this.SET_COUNT(data.data)
+        this.SET_TOKEN(data.data)
         // 跳转路由
         this.$router.push('/profile')
         // 成功提示
