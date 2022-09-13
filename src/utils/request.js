@@ -10,6 +10,8 @@ const request = axios.create({
   timeout: 5000,
   baseURL: 'http://toutiao.itheima.net'
 })
+
+// 不然你这个怎么来的
 request.interceptors.request.use(
   function (config) {
     const {
