@@ -16,24 +16,28 @@ export default new Vuex.Store({
     createPresistedState({
       key: 'HEIMA_TOUTIAO',
       // storage:window.sessionStorage更改存储的位置
-      reducer({ tokenObj }) {
-        return { tokenObj }
+      reducer({ tokenObj, myChannels }) {
+        return { tokenObj, myChannels }
         // 此方法可以想传什么数据就爱传什么数据，而不是传全部
       }
     })
   ],
   state: {
-    tokenObj: {}
+    tokenObj: {},
+    myChannels: []
   },
   getters: {
     isLogin(state) {
       return !!state.tokenObj.token
     }
   },
-
   mutations: {
     SET_TOKEN(state, token) {
       state.tokenObj = token
+    },
+
+    SET_MY_CHANNELS(state, channels) {
+      state.myChannels = channels
     }
   }
 })

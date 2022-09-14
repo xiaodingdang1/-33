@@ -14,7 +14,7 @@
     <div class="my-pannel">
       <van-grid gutter="10" :border="false">
         <van-grid-item
-          v-for="(item,index ) in myChannels"
+          v-for="(item, index) in myChannels"
           :class="{ active: item.name === '推荐' }"
           :key="item.id"
           :text="item.name"
@@ -32,6 +32,7 @@
           :key="item.id"
           :text="item.name"
           icon="plus"
+          @click="$emit('add-channel',item)"
         />
       </van-grid>
     </div>
@@ -68,9 +69,9 @@ export default {
       //   console.log(data)
       this.allChannnels = data.data.channels
     },
-    handleMyChannel({ name }, index) {
+    handleMyChannel({ name, id }, index) {
       if (this.isEdit && name !== '推荐') {
-        console.log('删除', name)
+        this.$emit('del-channel', id)
       } else {
         this.$emit('change-active', index)
       }
