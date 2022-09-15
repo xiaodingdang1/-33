@@ -3,7 +3,14 @@
     <!-- 搜索框 -->
     <van-nav-bar class="navbar">
       <template #title>
-        <van-button icon="search" size="small" round block>搜索</van-button>
+        <van-button
+          icon="search"
+          size="small"
+          round
+          block
+          @click="$router.push('/search')"
+          >搜索</van-button
+        >
       </template>
     </van-nav-bar>
     <!-- 频道文章展示 -->
@@ -20,7 +27,7 @@
       position="bottom"
       :style="{ height: '100%' }"
       ><channel-edit
-      v-if="isshow"
+        v-if="isshow"
         @change-active=";[(isshow = false), (active = $event)]"
         :myChannels="Channels"
         @del-channel="delChannel"

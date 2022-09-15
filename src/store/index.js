@@ -1,5 +1,4 @@
 //  这个就跟我们刚才写的一样
-// 当初我们用这个是干吗的 忘了没 想起来没
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPresistedState from 'vuex-persistedstate'
@@ -16,15 +15,16 @@ export default new Vuex.Store({
     createPresistedState({
       key: 'HEIMA_TOUTIAO',
       // storage:window.sessionStorage更改存储的位置
-      reducer({ tokenObj, myChannels }) {
-        return { tokenObj, myChannels }
+      reducer({ tokenObj, myChannels, histories }) {
+        return { tokenObj, myChannels, histories }
         // 此方法可以想传什么数据就爱传什么数据，而不是传全部
       }
     })
   ],
   state: {
     tokenObj: {},
-    myChannels: []
+    myChannels: [],
+    histories: []
   },
   getters: {
     isLogin(state) {
@@ -38,6 +38,9 @@ export default new Vuex.Store({
 
     SET_MY_CHANNELS(state, channels) {
       state.myChannels = channels
+    },
+    SET_HISTORIES(state, histories) {
+      state.histories = histories
     }
   }
 })
